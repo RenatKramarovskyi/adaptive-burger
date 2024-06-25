@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
+  width: 100%;
+  height: 40px;
+  background-color: darkorange;
+  position: fixed;
+  z-index: 50;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+main{
+  padding: 40px 30px;
+}
+p{
+  margin: 20px 0px;
+}
+.burger_btn{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.burger_btn:before{
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 100%;
+  background-color: black;
+  height: 3px;
+  transition: 0.2s;
+}
+.burger_btn:after{
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  width: 100%;
+  background-color: black;
+  height: 3px;
+  transition: 0.2s;
+}
+.burger_btn > span{
+  position: absolute;
+  top: 14px;
+  width: 100%;
+  background-color: black;
+  height: 3px;
+  transition: 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.burger_btn:hover::before,
+.burger_btn:hover::after,
+.burger_btn:hover > span
+{
+  background-color: cadetblue;
+  transform: scale(0.95);
 }
